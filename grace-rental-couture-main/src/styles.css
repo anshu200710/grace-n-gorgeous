@@ -1,0 +1,226 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-maroon: var(--maroon);
+  --color-burgundy: var(--burgundy);
+  --color-wine: var(--wine);
+  --color-crimson: var(--crimson);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-cream: var(--cream);
+  --color-champagne: var(--champagne);
+  --color-nude: var(--nude);
+  --font-display: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Jost", "Inter", system-ui, sans-serif;
+  --font-script: "Pinyon Script", "Great Vibes", cursive;
+}
+
+:root {
+  --radius: 0.25rem;
+
+  /* Brand palette */
+  --maroon: oklch(0.32 0.12 18);
+  --burgundy: oklch(0.28 0.13 14);
+  --wine: oklch(0.36 0.15 20);
+  --crimson: oklch(0.45 0.18 22);
+  --gold: oklch(0.74 0.13 78);
+  --gold-soft: oklch(0.84 0.08 82);
+  --cream: oklch(0.97 0.015 80);
+  --champagne: oklch(0.93 0.03 82);
+  --nude: oklch(0.88 0.04 30);
+
+  /* Semantic */
+  --background: var(--cream);
+  --foreground: oklch(0.22 0.06 18);
+  --card: oklch(0.985 0.012 80);
+  --card-foreground: var(--foreground);
+  --popover: var(--cream);
+  --popover-foreground: var(--foreground);
+  --primary: var(--maroon);
+  --primary-foreground: var(--cream);
+  --secondary: var(--champagne);
+  --secondary-foreground: var(--burgundy);
+  --muted: oklch(0.94 0.02 75);
+  --muted-foreground: oklch(0.45 0.05 25);
+  --accent: var(--gold);
+  --accent-foreground: var(--burgundy);
+  --destructive: oklch(0.55 0.22 25);
+  --destructive-foreground: var(--cream);
+  --border: oklch(0.85 0.04 75);
+  --input: oklch(0.88 0.03 75);
+  --ring: var(--gold);
+
+  --gradient-royal: linear-gradient(135deg, var(--burgundy), var(--maroon) 50%, var(--wine));
+  --gradient-gold: linear-gradient(120deg, var(--gold-soft), var(--gold) 50%, var(--gold-soft));
+  --shadow-luxury: 0 30px 80px -20px color-mix(in oklab, var(--burgundy) 40%, transparent);
+  --shadow-soft: 0 10px 40px -15px color-mix(in oklab, var(--burgundy) 25%, transparent);
+}
+
+.dark {
+  --background: oklch(0.18 0.04 18);
+  --foreground: var(--cream);
+  --card: oklch(0.22 0.05 18);
+  --card-foreground: var(--cream);
+  --primary: var(--gold);
+  --primary-foreground: var(--burgundy);
+  --border: oklch(0.3 0.05 20);
+}
+
+@layer base {
+  @font-face {
+    font-family: "Cormorant Garamond";
+    src: url("https://fonts.gstatic.com/s/cormorantgaramond/v16/co3bmX5slCNuHLi8bLeY9MK7whWMhyjornFLsS6V7w.woff2") format("woff2");
+    font-weight: 300 700;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Cormorant Garamond";
+    src: url("https://fonts.gstatic.com/s/cormorantgaramond/v16/co3YmX5slCNuHLi8bLeY9MK7whWMhyjQAllvuQWJ5heb_w.woff2") format("woff2");
+    font-weight: 300 700;
+    font-style: italic;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Jost";
+    src: url("https://fonts.gstatic.com/s/jost/v15/92zPtBhPNqw79Ij1E865zBUv7myjJQVGPokMmuHL.woff2") format("woff2");
+    font-weight: 100 900;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Pinyon Script";
+    src: url("https://fonts.gstatic.com/s/pinyonscript/v22/6xKpdSJbL9-e9LuoeQiDRQR8aOLQO4bhiDY.woff2") format("woff2");
+    font-weight: 400;
+    font-display: swap;
+  }
+
+  * { border-color: var(--color-border); }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "liga";
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,h2,h3,h4 { font-family: var(--font-display); letter-spacing: -0.01em; }
+}
+
+@layer components {
+  .text-script { font-family: var(--font-script); }
+  .text-display { font-family: var(--font-display); }
+  .label-eyebrow {
+    font-family: var(--font-sans);
+    text-transform: uppercase;
+    letter-spacing: 0.32em;
+    font-size: 0.7rem;
+    font-weight: 500;
+  }
+  .gold-divider {
+    display: inline-flex; align-items: center; gap: 0.75rem;
+    color: var(--gold);
+  }
+  .gold-divider::before, .gold-divider::after {
+    content: ""; height: 1px; width: 3rem;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+  .btn-royal {
+    display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+    padding: 0.9rem 2rem;
+    background: var(--gradient-royal);
+    color: var(--cream);
+    border: 1px solid color-mix(in oklab, var(--gold) 50%, transparent);
+    font-family: var(--font-sans);
+    font-size: 0.78rem; letter-spacing: 0.28em; text-transform: uppercase;
+    transition: all .4s cubic-bezier(.2,.8,.2,1);
+    box-shadow: var(--shadow-soft);
+  }
+  .btn-royal:hover { transform: translateY(-2px); box-shadow: var(--shadow-luxury); }
+  .btn-ghost-gold {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.85rem 1.8rem;
+    background: transparent;
+    color: var(--burgundy);
+    border: 1px solid color-mix(in oklab, var(--burgundy) 35%, transparent);
+    font-size: 0.72rem; letter-spacing: 0.3em; text-transform: uppercase;
+    transition: all .3s ease;
+  }
+  .btn-ghost-gold:hover { background: var(--burgundy); color: var(--cream); }
+
+  .mughal-arch {
+    -webkit-mask-image: radial-gradient(ellipse 100% 65% at 50% 100%, black 99%, transparent 100%),
+                        linear-gradient(black, black);
+    -webkit-mask-composite: source-in;
+            mask-image: radial-gradient(ellipse 100% 65% at 50% 100%, black 99%, transparent 100%),
+                        linear-gradient(black, black);
+  }
+  .arch-frame {
+    border-radius: 50% 50% 8px 8px / 38% 38% 4px 4px;
+    overflow: hidden;
+  }
+  .gold-border {
+    border: 1px solid color-mix(in oklab, var(--gold) 60%, transparent);
+    box-shadow: inset 0 0 0 4px var(--cream),
+                inset 0 0 0 5px color-mix(in oklab, var(--gold) 40%, transparent);
+  }
+  .silk-bg {
+    background:
+      radial-gradient(1200px 600px at 80% -10%, color-mix(in oklab, var(--gold) 18%, transparent), transparent 60%),
+      radial-gradient(900px 500px at 0% 100%, color-mix(in oklab, var(--burgundy) 18%, transparent), transparent 60%),
+      var(--cream);
+  }
+  .royal-bg {
+    background:
+      radial-gradient(800px 500px at 50% 0%, color-mix(in oklab, var(--gold) 25%, transparent), transparent 60%),
+      var(--gradient-royal);
+  }
+  .vignette::after {
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(ellipse at center, transparent 55%, rgba(0,0,0,0.45) 100%);
+  }
+}
+
+@keyframes float-silk {
+  0%,100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(0.5deg); }
+}
+.animate-float { animation: float-silk 7s ease-in-out infinite; }
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.shimmer-text {
+  background: linear-gradient(90deg, var(--gold-soft) 0%, var(--gold) 25%, #fff5d6 50%, var(--gold) 75%, var(--gold-soft) 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  animation: shimmer 6s linear infinite;
+}
