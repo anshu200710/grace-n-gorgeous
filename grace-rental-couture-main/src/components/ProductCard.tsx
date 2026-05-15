@@ -39,10 +39,7 @@ export function ProductCard({ product, index = 0 }: { product: Product; index?: 
           <p className="label-eyebrow text-[var(--gold)]">{product.category}</p>
           <h3 className="text-display text-xl text-[var(--burgundy)] italic mt-1">{product.name}</h3>
           <p className="text-xs text-[var(--muted-foreground)] mt-1">{product.fabric}</p>
-          <div className="mt-2 flex items-center justify-center gap-3 text-sm">
-            <span className="text-[var(--burgundy)] font-medium">₹{product.price.toLocaleString("en-IN")}</span>
-            <span className="text-[10px] text-[var(--muted-foreground)] tracking-widest uppercase">/ {product.duration}</span>
-          </div>
+          {/* Removed price and duration as per updated product structure */}
         </div>
       </Link>
     </motion.div>
