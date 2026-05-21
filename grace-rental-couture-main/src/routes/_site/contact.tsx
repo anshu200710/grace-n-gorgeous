@@ -15,11 +15,11 @@ export const Route = createFileRoute("/_site/contact")({
             By appointment only. Step into a private salon experience with our head curator.
           </p>
           <div className="mt-9 space-y-5 text-[var(--burgundy)]">
-            <Row icon={<MapPin />} label="Atelier" value="14, Heritage Lane, Banjara Hills, Hyderabad 500034" />
-            <Row icon={<Phone />} label="Phone" value="+91 98765 43210" />
-            <Row icon={<Mail />} label="Email" value="hello@gracengorgeous.com" />
-            <Row icon={<MessageCircle />} label="WhatsApp" value="+91 98765 43210" />
-            <Row icon={<Instagram />} label="Instagram" value="@gracengorgeous" />
+            <Row icon={<MapPin />} label="Atelier" value="1/6665, 1/6666, Near Kabul Nagar, Gurudwara, Rohtash Nagar, Shahdara, Delhi-110032" />
+            <Row icon={<Phone />} label="Phone" value="8700501349" />
+            <Row icon={<Mail />} label="Email" value="grace.n.gorgeous25@gmail.com" />
+            <Row icon={<MessageCircle />} label="WhatsApp" value="8700501349" />
+            <Row icon={<Instagram />} label="Instagram" value="@grace_n_gorgeous_rental" />
           </div>
         </div>
         <div className="bg-[var(--cream)] border border-[var(--gold)]/40 p-10">

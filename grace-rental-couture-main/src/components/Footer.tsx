@@ -41,9 +41,9 @@ export function Footer() {
           <div>
             <h4 className="label-eyebrow text-[var(--gold)] mb-5">Visit</h4>
             <ul className="space-y-3 text-sm text-[var(--cream)]/85">
-              <li className="flex gap-2"><MapPin size={16} className="text-[var(--gold)] mt-0.5" /> Heritage Lane, Hyderabad, India</li>
-              <li className="flex gap-2"><Phone size={16} className="text-[var(--gold)] mt-0.5" /> +91 98765 43210</li>
-              <li className="flex gap-2"><Mail size={16} className="text-[var(--gold)] mt-0.5" /> hello@gracengorgeous.com</li>
+              <li className="flex gap-2"><MapPin size={16} className="text-[var(--gold)] mt-0.5" /> 1/6665, 1/6666, Near Kabul Nagar, Gurudwara, Rohtash Nagar, Shahdara, Delhi-110032</li>
+              <li className="flex gap-2"><Phone size={16} className="text-[var(--gold)] mt-0.5" /> 8700501349</li>
+              <li className="flex gap-2"><Mail size={16} className="text-[var(--gold)] mt-0.5" /> grace.n.gorgeous25@gmail.com</li>
             </ul>
             <p className="mt-6 text-xs text-[var(--cream)]/60 tracking-widest uppercase">By appointment only</p>
           </div>

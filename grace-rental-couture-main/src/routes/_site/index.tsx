@@ -6,6 +6,7 @@ import celeb from "@/assets/celebrity-banner.jpg";
 import { COLLECTIONS, PRODUCTS } from "@/lib/catalog";
 import { Reveal, SectionHeading } from "@/components/Reveal";
 import { ProductCard } from "@/components/ProductCard";
+import { RecentPosts } from "@/components/RecentPosts";
 import { Logo } from "@/components/Logo";
 
 export const Route = createFileRoute("/_site/")({
@@ -182,6 +183,20 @@ function Home() {
               <ProductCard key={p.slug} product={p} index={i} />
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* RECENT BLOG POSTS */}
+      <section className="py-24 bg-[var(--cream)]">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
+            <div>
+              <span className="gold-divider label-eyebrow">From the Blog</span>
+              <h2 className="text-display italic text-4xl md:text-5xl text-[var(--burgundy)] mt-3">Recent Blog Posts</h2>
+            </div>
+            <Link to="/blog" className="btn-ghost-gold self-start md:self-end">View All</Link>
+          </div>
+          <RecentPosts />
         </div>
       </section>
 
