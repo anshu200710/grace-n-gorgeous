@@ -15,8 +15,8 @@ export function Footer() {
               A heritage rental atelier curating royal Indian couture for brides, families and celebrations of a lifetime.
             </p>
             <div className="flex gap-3 mt-6">
-              <a href="#" className="w-10 h-10 border border-[var(--gold)]/40 flex items-center justify-center hover:bg-[var(--gold)] hover:text-[var(--burgundy)] transition"><Instagram size={16} /></a>
-              <a href="#" className="w-10 h-10 border border-[var(--gold)]/40 flex items-center justify-center hover:bg-[var(--gold)] hover:text-[var(--burgundy)] transition"><MessageCircle size={16} /></a>
+              <a href="https://instagram.com/grace_n_gorgeous_rental" target="_blank" rel="noopener noreferrer" className="w-10 h-10 border border-[var(--gold)]/40 flex items-center justify-center hover:bg-[var(--gold)] hover:text-[var(--burgundy)] transition"><Instagram size={16} /></a>
+              <a href="https://wa.me/8700501349" target="_blank" rel="noopener noreferrer" className="w-10 h-10 border border-[var(--gold)]/40 flex items-center justify-center hover:bg-[var(--gold)] hover:text-[var(--burgundy)] transition"><MessageCircle size={16} /></a>
             </div>
           </div>
           <div>
@@ -39,13 +39,27 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <h4 className="label-eyebrow text-[var(--gold)] mb-5">Visit</h4>
-            <ul className="space-y-3 text-sm text-[var(--cream)]/85">
-              <li className="flex gap-2"><MapPin size={16} className="text-[var(--gold)] mt-0.5" /> 1/6665, 1/6666, Near Kabul Nagar, Gurudwara, Rohtash Nagar, Shahdara, Delhi-110032</li>
-              <li className="flex gap-2"><Phone size={16} className="text-[var(--gold)] mt-0.5" /> 8700501349</li>
-              <li className="flex gap-2"><Mail size={16} className="text-[var(--gold)] mt-0.5" /> grace.n.gorgeous25@gmail.com</li>
+            <h4 className="label-eyebrow text-[var(--gold)] mb-5">Journal</h4>
+            <ul className="space-y-3 text-sm">
+              <li><Link to="/blog" className="hover:text-[var(--gold)]">All Stories</Link></li>
+              <li><Link to="/blog" className="hover:text-[var(--gold)]">Bridal Stories</Link></li>
+              <li><Link to="/blog" className="hover:text-[var(--gold)]">Styling Tips</Link></li>
+              <li><Link to="/blog" className="hover:text-[var(--gold)]">Fashion Guide</Link></li>
+              <li><Link to="/blog" className="hover:text-[var(--gold)]">Trends</Link></li>
             </ul>
-            <p className="mt-6 text-xs text-[var(--cream)]/60 tracking-widest uppercase">By appointment only</p>
+          </div>
+        </div>
+        <div className="grid lg:grid-cols-1 gap-12 py-8 border-b border-[var(--gold)]/30">
+          <div>
+            <h4 className="label-eyebrow text-[var(--gold)] mb-4">Visit Us</h4>
+            <ul className="space-y-3 text-sm text-[var(--cream)]/85">
+              <li className="flex gap-2"><MapPin size={16} className="text-[var(--gold)] mt-0.5 flex-shrink-0" /> 1/6665, 1/6666, Near Kabul Nagar, Gurudwara, Rohtash Nagar, Shahdara, Delhi-110032</li>
+              <li className="flex gap-2"><Phone size={16} className="text-[var(--gold)] mt-0.5 flex-shrink-0" /> <a href="tel:8700501349" className="hover:text-[var(--gold)]">8700501349</a></li>
+              <li className="flex gap-2"><Mail size={16} className="text-[var(--gold)] mt-0.5 flex-shrink-0" /> <a href="mailto:grace.n.gorgeous25@gmail.com" className="hover:text-[var(--gold)]">grace.n.gorgeous25@gmail.com</a></li>
+              <li className="flex gap-2"><MessageCircle size={16} className="text-[var(--gold)] mt-0.5 flex-shrink-0" /> <a href="https://wa.me/8700501349" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--gold)]">WhatsApp: 8700501349</a></li>
+              <li className="flex gap-2"><Instagram size={16} className="text-[var(--gold)] mt-0.5 flex-shrink-0" /> <a href="https://instagram.com/grace_n_gorgeous_rental" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--gold)]">@grace_n_gorgeous_rental</a></li>
+            </ul>
+            <p className="mt-4 text-xs text-[var(--cream)]/60 tracking-widest uppercase">By appointment only</p>
           </div>
         </div>
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[var(--cream)]/60">

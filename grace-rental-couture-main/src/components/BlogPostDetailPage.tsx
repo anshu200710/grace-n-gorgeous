@@ -101,43 +101,55 @@ export function BlogPostDetailPage() {
         {/* Main body content */}
         <div className="prose prose-lg max-w-none">
           {post.body ? (
-            <PortableText 
-              value={post.body}
-              components={{
-                block: {
-                  h1: ({ children }) => <h1 className="text-3xl font-bold text-[var(--burgundy)] mt-8 mb-4">{children}</h1>,
-                  h2: ({ children }) => <h2 className="text-2xl font-bold text-[var(--burgundy)] mt-6 mb-3">{children}</h2>,
-                  h3: ({ children }) => <h3 className="text-xl font-bold text-[var(--burgundy)] mt-5 mb-2">{children}</h3>,
-                  blockquote: ({ children }) => (
-                    <blockquote className="border-l-4 border-[var(--gold)] pl-6 py-2 my-6 italic text-[var(--muted-foreground)]">
-                      {children}
-                    </blockquote>
-                  ),
-                  normal: ({ children }) => <p className="text-gray-700 leading-relaxed my-4">{children}</p>,
-                },
-                marks: {
-                  strong: ({ children }) => <strong className="font-semibold text-[var(--burgundy)]">{children}</strong>,
-                  em: ({ children }) => <em className="italic">{children}</em>,
-                  code: ({ children }) => (
-                    <code className="bg-[var(--champagne)] px-2 py-1 rounded text-sm font-mono">
-                      {children}
-                    </code>
-                  ),
-                },
-                types: {
-                  image: ({ value }) => (
-                    <figure className="my-8">
-                      <img 
-                        src={value.asset?.url} 
-                        alt={value.alt || 'Blog image'}
-                        className="w-full rounded-lg shadow-sm"
-                      />
-                      {value.caption && <figcaption className="text-sm text-[var(--muted-foreground)] mt-2 text-center">{value.caption}</figcaption>}
-                    </figure>
-                  ),
-                },
-              }}
-            />
+            Array.isArray(post.body) ? (
+              // If body is an array, render with PortableText
+              <PortableText 
+                value={post.body}
+                components={{
+                  block: {
+                    h1: ({ children }) => <h1 className="text-3xl font-bold text-[var(--burgundy)] mt-8 mb-4">{children}</h1>,
+                    h2: ({ children }) => <h2 className="text-2xl font-bold text-[var(--burgundy)] mt-6 mb-3">{children}</h2>,
+                    h3: ({ children }) => <h3 className="text-xl font-bold text-[var(--burgundy)] mt-5 mb-2">{children}</h3>,
+                    blockquote: ({ children }) => (
+                      <blockquote className="border-l-4 border-[var(--gold)] pl-6 py-2 my-6 italic text-[var(--muted-foreground)]">
+                        {children}
+                      </blockquote>
+                    ),
+                    normal: ({ children }) => <p className="text-gray-700 leading-relaxed my-4">{children}</p>,
+                  },
+                  marks: {
+                    strong: ({ children }) => <strong className="font-semibold text-[var(--burgundy)]">{children}</strong>,
+                    em: ({ children }) => <em className="italic">{children}</em>,
+                    code: ({ children }) => (
+                      <code className="bg-[var(--champagne)] px-2 py-1 rounded text-sm font-mono">
+                        {children}
+                      </code>
+                    ),
+                  },
+                  types: {
+                    image: ({ value }) => (
+                      <figure className="my-8">
+                        <img 
+                          src={value.asset?.url} 
+                          alt={value.alt || 'Blog image'}
+                          className="w-full rounded-lg shadow-sm"
+                        />
+                        {value.caption && <figcaption className="text-sm text-[var(--muted-foreground)] mt-2 text-center">{value.caption}</figcaption>}
+                      </figure>
+                    ),
+                  },
+                }}
+              />
+            ) : (
+              // If body is a string, render as plain text paragraphs
+              <div className="space-y-4">
+                {typeof post.body === 'string' && post.body.split('\n\n').map((paragraph, i) => (
+                  <p key={i} className="text-gray-700 leading-relaxed">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+            )
           ) : (
             <p className="text-gray-500">No content available</p>
           )}
